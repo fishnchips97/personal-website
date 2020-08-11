@@ -5,7 +5,7 @@ function Products() {
     <div className="container-fluid">
 
       <h1>
-        Home Page Content
+        Products
       </h1>
 
       <p>
