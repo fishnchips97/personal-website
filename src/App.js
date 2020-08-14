@@ -8,7 +8,8 @@ import {
 import Header from './components/headerComponent/header'
 import Footer from './components/footerComponent/footer'
 import Homepage from './components/pages/homePage'
-import Products from './components/pages/products'
+import Projects from './components/pages/projects'
+import Resume from './components/pages/resume'
 
 import './Assets/css/default.min.css'
 
@@ -20,7 +21,8 @@ function App() {
       <Header />
 
         <Route exact path='/' component={Homepage} />
-        <Route exact path='/Products' component={Products} />
+        <Route exact path='/Projects' component={Projects} />
+        <Route exact path='/Resume' component={Resume} />
 
       <Footer />
 

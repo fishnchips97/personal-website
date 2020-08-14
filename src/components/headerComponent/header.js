@@ -8,7 +8,7 @@ function Header() {
   return (
     <header>
       <div className="logo">
-        LOGO
+        EBF
       </div>
 
       <nav>
@@ -18,11 +18,11 @@ function Header() {
             </li>
 
             <li>
-              <Link to="/Products">Products</Link>
+              <Link to="/Projects">Projects</Link>
             </li>
 
             <li className="last">
-              <Link to="/">Contact</Link>
+              <Link to="/Resume">Resume</Link>
             </li>
           </ul>
       </nav>
