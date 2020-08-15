@@ -1,9 +1,13 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
+  Router as Router,
   Route
 } from 'react-router-dom';
 
+// to solve stateless issue for server side rendering: https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/docs/guides/server-rendering.md
+
+
+import { createMemoryHistory } from 'history';
 // components
 import Header from './components/headerComponent/header'
 import Footer from './components/footerComponent/footer'
@@ -13,9 +17,12 @@ import Resume from './components/pages/resume'
 
 import './Assets/css/default.min.css'
 
+const history = createMemoryHistory();
+
+
 function App() {
   return (
-    <Router>
+    <Router history={history}>
     <div className="App">
 
       <Header />
