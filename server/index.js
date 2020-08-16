@@ -4,14 +4,29 @@ import fs from 'fs';
 import React from 'react';
 import express from 'express';
 import ReactDOMServer from 'react-dom/server';
+import { StaticRouter } from "react-router-dom";
 
 import App from '../src/App';
 
 const PORT = process.env.PORT || 3006;
 const app = express();
 
-app.get('/', (req, res) => {
-  const app = ReactDOMServer.renderToString(<App />);
+app.get('/*', (req, res) => {
+  // const app = ReactDOMServer.renderToString(<App />);
+
+  const context = {};
+  const markup = ReactDOMServer.renderToString(
+    <StaticRouter location={req.url} context={context}>
+      <App />
+    </StaticRouter>
+  );
+
+  // if (context.url) {
+  //   // Somewhere a `<Redirect>` was rendered
+  //   redirect(301, context.url);
+  // } else {
+  //   // we're good, send the response
+  // }
 
   const indexFile = path.resolve('./build/index.html');
   fs.readFile(indexFile, 'utf8', (err, data) => {
@@ -21,7 +36,7 @@ app.get('/', (req, res) => {
     }
 
     return res.send(
-      data.replace('<div id="root"></div>', `<div id="root">${app}</div>`)
+      data.replace('<div id="root"></div>', `<div id="root">${markup}</div>`)
     );
   });
 });
