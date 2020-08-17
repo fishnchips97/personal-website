@@ -2,13 +2,33 @@ import React from 'react';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { hydrate } from 'react-dom'
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
+import createBrowserHistory from 'history/createBrowserHistory';
+
+const customHistory = createBrowserHistory();
+const prevHistoryPush = customHistory.push;
+let lastLocation = customHistory.location;
+
+customHistory.listen(location => {
+  lastLocation = location;
+});
+customHistory.push = (pathname, state = {}) => {
+  console.log(pathname)
+  if (
+    lastLocation === null ||
+    pathname !==
+      lastLocation.pathname + lastLocation.search + lastLocation.hash ||
+    JSON.stringify(state) !== JSON.stringify(lastLocation.state)
+  ) {
+    prevHistoryPush(pathname, state);
+  }
+};
 
 
 hydrate(
-  <BrowserRouter>
+  <Router history={customHistory}>
   <App />
-  </BrowserRouter>,
+  </Router>,
   document.getElementById('root')
 );
 

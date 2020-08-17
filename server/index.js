@@ -11,7 +11,7 @@ import App from '../src/App';
 const PORT = process.env.PORT || 3006;
 const app = express();
 
-app.get('/*', (req, res) => {
+app.get(['/', '/Resume', '/Projects'], (req, res) => {
   // const app = ReactDOMServer.renderToString(<App />);
 
   const context = {};
@@ -20,6 +20,7 @@ app.get('/*', (req, res) => {
       <App />
     </StaticRouter>
   );
+  // console.log(markup)
 
   // if (context.url) {
   //   // Somewhere a `<Redirect>` was rendered
