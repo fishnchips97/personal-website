@@ -13,12 +13,12 @@ customHistory.listen(location => {
   lastLocation = location;
 });
 customHistory.push = (pathname, state = {}) => {
-  console.log(pathname)
+
   if (
     lastLocation === null ||
     pathname !==
       lastLocation.pathname + lastLocation.search + lastLocation.hash ||
-    JSON.stringify(state) !== JSON.stringify(lastLocation.state)
+    (JSON.stringify(state) !== JSON.stringify(lastLocation.state) && (typeof lastLocation.state !== 'undefined'))
   ) {
     prevHistoryPush(pathname, state);
   }
