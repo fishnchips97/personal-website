@@ -1,4 +1,7 @@
 import React from 'react';
+import {
+  Link
+} from 'react-router-dom';
 
 function Projects() {
   return (
@@ -10,7 +13,8 @@ function Projects() {
 
       <ul>
         <li>React Website with servere side rendering</li>
-        <li>Swift UI Application: Pacr</li>
+
+        <li>Swift UI Application: Pacr <br/> <Link to="/projects/pacr">Pacr</Link></li>
       </ul>
 
     </div>

@@ -19,11 +19,11 @@ function Header() {
             </li>
 
             <li>
-              <Link to="/Projects">Projects</Link>
+              <Link to="/projects">Projects</Link>
             </li>
 
             <li className="last">
-              <Link to="/Resume">Resume</Link>
+              <Link to="/resume">Resume</Link>
             </li>
           </ul>
       </nav>

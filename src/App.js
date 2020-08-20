@@ -13,6 +13,8 @@ import Footer from './components/footerComponent/footer'
 import Homepage from './components/pages/homePage'
 import Projects from './components/pages/projects'
 import Resume from './components/pages/resume'
+import Pacr from './components/projects/pacr'
+import Pacr_Privacy_Policy from './components/projects/support_docs/pacr_privacy_policy'
 
 
 import './Assets/css/default.min.css'
@@ -27,8 +29,10 @@ function App() {
           <Header />
             <Switch>
               <Route exact path='/' component={Homepage} />
-              <Route exact path='/Projects' component={Projects} />
-              <Route exact path='/Resume' component={Resume} />
+              <Route exact path='/projects' component={Projects} />
+              <Route exact path='/resume' component={Resume} />
+              <Route exact path='/projects/pacr' component={Pacr} />
+              <Route exact path='/projects/pacr/privacy_policy' component={Pacr_Privacy_Policy} />
             </Switch>
           <Footer />
 

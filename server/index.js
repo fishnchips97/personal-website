@@ -11,7 +11,13 @@ import App from '../src/App';
 const PORT = process.env.PORT || 3006;
 const app = express();
 
-app.get(['/', '/Resume', '/Projects'], (req, res) => {
+app.get([
+  '/',
+  '/resume',
+  '/projects',
+  '/projects/pacr/',
+  '/projects/pacr/privacy_policy'
+], (req, res) => {
   // const app = ReactDOMServer.renderToString(<App />);
 
   const context = {};
