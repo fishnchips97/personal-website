@@ -12,9 +12,9 @@ function Projects() {
       </h1>
 
       <ul>
-        <li>React Website with servere side rendering</li>
+        <li>Swift UI Application: Pacr<br/><Link to="/projects/pacr">Pacr</Link></li>
 
-        <li>Swift UI Application: Pacr <br/> <Link to="/projects/pacr">Pacr</Link></li>
+        <li>Server Side Rendered React Website<br/> <Link to="/projects/personal_website">Personal Website</Link></li>
       </ul>
 
     </div>

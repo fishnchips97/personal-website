@@ -15,6 +15,7 @@ import Projects from './components/pages/projects'
 import Resume from './components/pages/resume'
 import Pacr from './components/projects/pacr'
 import Pacr_Privacy_Policy from './components/projects/support_docs/pacr_privacy_policy'
+import Personal_Website from './components/projects/personal_website'
 
 
 import './Assets/css/default.min.css'
@@ -33,6 +34,7 @@ function App() {
               <Route exact path='/resume' component={Resume} />
               <Route exact path='/projects/pacr' component={Pacr} />
               <Route exact path='/projects/pacr/privacy_policy' component={Pacr_Privacy_Policy} />
+              <Route exact path='/projects/personal_website' component={Personal_Website} />
             </Switch>
           <Footer />
 

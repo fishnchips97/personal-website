@@ -16,7 +16,8 @@ app.get([
   '/resume',
   '/projects',
   '/projects/pacr/',
-  '/projects/pacr/privacy_policy'
+  '/projects/pacr/privacy_policy',
+  '/projects/personal_website'
 ], (req, res) => {
   // const app = ReactDOMServer.renderToString(<App />);
 
